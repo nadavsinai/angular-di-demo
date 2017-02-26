@@ -1,9 +1,11 @@
-import {IVehicle, VehicleType, IEngine} from '../veichle.types';
+import {IVehicle, VehicleType, IEngine, DriveStates} from '../veichle.types';
 export class Car implements IVehicle {
+  state: DriveStates;
   type: VehicleType = VehicleType.Car;
   public readonly make: string;
 
   constructor(public readonly engine: IEngine, make: string) {
+    this.state = DriveStates.stationary;
     this.make = make;
   }
 
@@ -13,7 +15,15 @@ export class Car implements IVehicle {
 
 
   drive(speed: number): void {
-    console.log(`${this.make} driving at ${speed}`)
-    this.engine.start();
+    this.engine.start().then(() => {
+      this.state = DriveStates.moving;
+      console.log(`${this.make} driving at ${speed}`);
+    });
+  }
+
+  stop() {
+    this.engine.stop();
+    this.state = DriveStates.stationary;
+    console.log('stopped ${this.make}');
   }
 }

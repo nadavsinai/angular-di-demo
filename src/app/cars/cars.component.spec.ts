@@ -2,7 +2,6 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {CarsComponent} from './cars.component';
 import {CarsCollection} from '../veichle.types';
-import Spy = jasmine.Spy;
 import {Car} from './car.class';
 
 describe('CarsComponent', () => {

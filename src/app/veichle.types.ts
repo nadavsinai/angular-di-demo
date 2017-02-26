@@ -10,7 +10,12 @@ export enum EngineTypes{
   BoxerV6Engine,
   SimpleGasEngine
 }
+export enum DriveStates {
+  stationary,
+  moving
+}
 export interface IVehicle {
+  state: DriveStates;
   type: VehicleType;
   drive(speed: number): void;
 }
