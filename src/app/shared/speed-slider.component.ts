@@ -7,5 +7,5 @@ import {Component, Input} from '@angular/core';
 })
 export class SpeedSliderComponent {
   @Input() max: number;
-  speed = 0;
+  public speed = 0;
 }

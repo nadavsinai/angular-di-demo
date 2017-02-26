@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {VehiclesComponent} from './veichles.component';
-import {CarsCollection} from '../veichle.types';
+import {CarsCollection, DriveStates} from '../veichle.types';
 import {Car} from '../shared/car.class';
 
 describe('VehiclesComponent', () => {
@@ -10,7 +10,7 @@ describe('VehiclesComponent', () => {
   let testCar: Car;
   beforeEach(async(() => {
 
-    testCar = {make: 'test', engine: {type: 'test'}, drive: jasmine.createSpy('drive')};
+    testCar = {state: DriveStates.stationary, make: 'test', engine: {type: 'test'}, drive: jasmine.createSpy('drive')};
 
     TestBed.configureTestingModule({
       providers: [

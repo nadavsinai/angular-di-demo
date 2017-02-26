@@ -10,7 +10,7 @@ import {DriveStates, EngineTypes, IVehicle} from '../veichle.types';
   template: `
     <div>{{vehicle.make}}
       <img class="carImage" [src]="vehicle.img"/>
-      <div *ngIf="vehicle.engine">Engine Type {{EngineTypes[vehicle.engine?.type]}}</div>
+      <div *ngIf="vehicle.engine">Engine Type {{EngineTypes[vehicle.engine.type]}}</div>
       <speed-slider #slider [max]="vehicle.maxSpeed"></speed-slider>
       <div [ngSwitch]="vehicle.state">
         <div *ngSwitchCase="DriveStates.stationary">
