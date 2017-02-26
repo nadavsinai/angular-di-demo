@@ -10,6 +10,7 @@ import {VehicleComponent} from './veichles/veichle.component';
 import {AsyncStoreService} from './async-store.service';
 import {OtherFactory} from './shared/other.factory';
 import {Horse} from './shared/horse.class';
+import {BentlyClass} from './shared/bently.class';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {Horse} from './shared/horse.class';
     ...ENGINES,
     {provide: FordMake, useValue: 'FORD'},
     {provide: BentlyMake, useValue: 'BENTLY'},
-    {provide: Bently, useFactory: CarFactoryService.buildCar, deps: [BoxerV6Engine, BentlyMake]},
+    {provide: Bently, useClass: BentlyClass},
     {provide: Ford, useFactory: CarFactoryService.buildCar, deps: [SimpleEngine, FordMake]},
     AsyncStoreService,
     OtherFactory,
