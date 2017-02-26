@@ -1,10 +1,12 @@
 import {IVehicle, VehicleType, IEngine, DriveStates} from '../veichle.types';
 export class Car implements IVehicle {
   state: DriveStates;
+  maxSpeed: number;
   type: VehicleType = VehicleType.Car;
   public readonly make: string;
 
   constructor(public readonly engine: IEngine, make: string) {
+    this.maxSpeed = engine.maxSpeed;
     this.state = DriveStates.stationary;
     this.make = make;
   }

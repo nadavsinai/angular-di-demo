@@ -1,6 +1,7 @@
 import {EngineTypes, IEngine} from '../veichle.types';
 
 export class BoxerV6Engine implements IEngine {
+  maxSpeed = 250;
   type = EngineTypes.BoxerV6Engine;
   readonly cylinders = 6;
   readonly fuel = 'petrol';
@@ -19,6 +20,7 @@ export class BoxerV6Engine implements IEngine {
 
 export class SimpleEngine implements IEngine {
   type = EngineTypes.SimpleEngine;
+  maxSpeed = 150;
   readonly cylinders = 4;
   readonly fuel = 'gas';
   isOn: boolean;
@@ -36,6 +38,7 @@ export class SimpleEngine implements IEngine {
 
 export class SimpleGasEngine extends SimpleEngine implements IEngine {
   type = EngineTypes.SimpleGasEngine;
+  maxSpeed = 120;
   readonly fuel = 'gas';
 }
 export const ENGINES = [SimpleEngine, SimpleGasEngine, BoxerV6Engine];

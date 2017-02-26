@@ -20,12 +20,14 @@ export interface IVehicle {
   make: string;
   state: DriveStates;
   type: VehicleType;
+  maxSpeed:number;
   drive(speed: number): void;
   stop(): void;
 }
 
 export interface IEngine {
   type: EngineTypes;
+  maxSpeed:number;
   fuel: any;
   cylinders: number;
   stop(): boolean;

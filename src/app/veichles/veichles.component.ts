@@ -4,13 +4,13 @@ import {CarsCollection, IVehicle} from '../veichle.types';
 import {AsyncStoreService} from '../async-store.service';
 
 @Component({
-  selector: 'app-cars',
+  selector: 'vehicles-list',
   template: `
     <div>
-      <app-car *ngFor="let v of vehicles|async" [vehicle]="v"></app-car>
+      <vehicle *ngFor="let v of vehicles|async" [vehicle]="v"></vehicle>
     </div>`,
 })
-export class CarsComponent implements OnInit {
+export class VehiclesComponent implements OnInit {
 
   vehicles: Promise<IVehicle[]>;
 

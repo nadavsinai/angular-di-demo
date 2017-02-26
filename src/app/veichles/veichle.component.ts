@@ -1,8 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DriveStates, EngineTypes, IVehicle} from '../veichle.types';
-import {Car} from '../shared/car.class';
 @Component({
-  selector: 'app-car',
+  selector: 'vehicle',
   styles: [`
     .carImage {
       max-width: 200px;
@@ -11,11 +10,11 @@ import {Car} from '../shared/car.class';
   template: `
     <div>{{vehicle.make}}
       <img class="carImage" [src]="vehicle.img"/>
-      <!--<div>Engine Type {{EngineTypes[car.engine.type]}}</div>-->
-      <speed-slider #slider></speed-slider>
+      <div *ngIf="vehicle.engine">Engine Type {{EngineTypes[vehicle.engine?.type]}}</div>
+      <speed-slider #slider [max]="vehicle.maxSpeed"></speed-slider>
       <div [ngSwitch]="vehicle.state">
         <div *ngSwitchCase="DriveStates.stationary">
-          'parking'
+          'stationary'
         </div>
         <div *ngSwitchCase="DriveStates.moving">
           'moving'
@@ -25,7 +24,7 @@ import {Car} from '../shared/car.class';
       <button *ngIf="vehicle.state === DriveStates.moving" (click)="vehicle.stop()">Stop</button>
     </div>`
 })
-export class CarComponent implements OnInit {
+export class VehicleComponent implements OnInit {
   @Input() vehicle: IVehicle;
   public EngineTypes = EngineTypes;
   public DriveStates = DriveStates;

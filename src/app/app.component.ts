@@ -11,7 +11,7 @@ import {Bently, CarsCollection, Ford} from './veichle.types';
     <h1>
       {{title}}
     </h1>
-    <app-cars ></app-cars>
+    <vehicles-list></vehicles-list>
   `,
   styles: []
 })

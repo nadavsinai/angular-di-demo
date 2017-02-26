@@ -1,9 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'speed-slider',
-  template: `<div>Speed:{{speed}} <input [value]="speed" type="range" min="0" max="200" (input)="speed = $event.target.value"/></div>`
+  template: `
+    <div>Speed:{{speed}} <input [value]="speed" type="range" min="0" [max]="max" (input)="speed = $event.target.value"/></div>`
 })
 export class SpeedSliderComponent {
-  speed = 0
+  @Input() max: number;
+  speed = 0;
 }

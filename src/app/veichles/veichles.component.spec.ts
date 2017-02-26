@@ -1,12 +1,12 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {CarsComponent} from './veichles.component';
+import {VehiclesComponent} from './veichles.component';
 import {CarsCollection} from '../veichle.types';
 import {Car} from '../shared/car.class';
 
-describe('CarsComponent', () => {
-  let component: CarsComponent;
-  let fixture: ComponentFixture<CarsComponent>;
+describe('VehiclesComponent', () => {
+  let component: VehiclesComponent;
+  let fixture: ComponentFixture<VehiclesComponent>;
   let testCar: Car;
   beforeEach(async(() => {
 
@@ -16,13 +16,13 @@ describe('CarsComponent', () => {
       providers: [
         {provide: CarsCollection, useValue: [testCar]}
       ],
-      declarations: [CarsComponent]
+      declarations: [VehiclesComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CarsComponent);
+    fixture = TestBed.createComponent(VehiclesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
