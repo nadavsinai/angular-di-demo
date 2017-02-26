@@ -1,8 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {CarsComponent} from './cars.component';
+import {CarsComponent} from './veichles.component';
 import {CarsCollection} from '../veichle.types';
-import {Car} from './car.class';
+import {Car} from '../shared/car.class';
 
 describe('CarsComponent', () => {
   let component: CarsComponent;

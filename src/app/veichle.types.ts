@@ -3,9 +3,11 @@ import {OpaqueToken} from  "@angular/core";
 
 export enum VehicleType {
   Car,
+  Animal,
   Bike
 }
 export enum EngineTypes{
+  Natural,
   SimpleEngine,
   BoxerV6Engine,
   SimpleGasEngine
@@ -15,9 +17,11 @@ export enum DriveStates {
   moving
 }
 export interface IVehicle {
+  make: string;
   state: DriveStates;
   type: VehicleType;
   drive(speed: number): void;
+  stop(): void;
 }
 
 export interface IEngine {
