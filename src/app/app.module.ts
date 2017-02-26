@@ -5,10 +5,15 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { CarsComponent } from './cars/cars.component';
+import { BikesComponent } from './bikes/bikes.component';
+import {Car} from "./cars/car.class";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarsComponent,
+    BikesComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +21,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide:Car,useFactory:()=>{}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
