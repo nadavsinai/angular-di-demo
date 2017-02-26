@@ -17,17 +17,19 @@ export enum DriveStates {
   moving
 }
 export interface IVehicle {
+  type: VehicleType;
   make: string;
   state: DriveStates;
-  type: VehicleType;
-  maxSpeed:number;
+  maxSpeed: number;
   drive(speed: number): void;
   stop(): void;
+  img?: string;
+  engine?: IEngine;
 }
 
 export interface IEngine {
   type: EngineTypes;
-  maxSpeed:number;
+  maxSpeed: number;
   fuel: any;
   cylinders: number;
   stop(): boolean;
