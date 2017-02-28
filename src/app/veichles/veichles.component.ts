@@ -7,11 +7,11 @@ import {AsyncStoreService} from '../async-store.service';
   selector: 'vehicles-list',
   template: `
     <div>
-      <vehicle *ngFor="let v of vehicles|async" [vehicle]="v"></vehicle>
+      <vehicle (clicked)="selected =i" [selected]="i===selected" *ngFor="let v of vehicles|async;let i=index" [vehicle]="v"></vehicle>
     </div>`,
 })
 export class VehiclesComponent implements OnInit {
-
+  selected = 0;
   vehicles: Promise<IVehicle[]>;
 
   constructor(@Inject(CarsCollection) public  predefinedCars: Car[], private asyncStore: AsyncStoreService, private inj: Injector) {
